@@ -2,7 +2,7 @@
 
 * Markdown教程 https://www.runoob.com/markdown/md-tutorial.html
 
->提示：本项目需要一定linux与编程基础阅读。没有也行，Baidu.com、Google.com、Bing.com 是最好的老师。
+>提示：本项目需要一定linux与编程基础阅读。没有也行，Baidu.com、Google.com、Bing.com 是最好的老师。linux可以看鸟哥的私房菜。我有很多电子书……需要的可以联系我(手动狗头) hailay@qq.com
 
 ## 自学JAVA的原因
 
