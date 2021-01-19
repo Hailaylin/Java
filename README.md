@@ -2,6 +2,8 @@
 
 * Markdown教程 https://www.runoob.com/markdown/md-tutorial.html
 
+>提示：本项目需要一定linux与编程基础阅读。没有也行，Baidu.com、Google.com、Bing.com 是最好的老师。
+
 ## 自学JAVA的原因
 
 到底是为什么要学这么多语言呢？？？为什么又要多学一个很久之后学校会学的JAVA呢？？？
@@ -9,7 +11,7 @@
 ### 原因1 插件配置
 > 原因是这样的：某Minecraft开发者(@[Coloryr](https://github.com/Coloryr))开发了一个可以让QQ信息和Minecraft聊天信息互通的插件和软件，借助[mirai](https://github.com/mamoe/mirai).
 
-> 这个作者我非常佩服，写的插件All_Music我都很喜欢用。只是有一点点不太好…… 配置文档太少了！还疯狂让我们看README.md……![you-do-not-read-README](./img/you-do-not-read-README.jpg)  
+> 这个作者我非常佩服，写的插件[All_MusicP](https://github.com/HeartAge/AllMusic_P)+[All_MusicM](https://github.com/HeartAge/AllMusic_M/)我都很喜欢用。只是有一点点不太好…… 配置文档太少了！还疯狂让我们看README.md……![you-do-not-read-README](./img/you-do-not-read-README.jpg)  
 我来回看了好几遍都配置不好，急死了
 
 >这时候在群里问，群里面的一个大佬“@柠玥”帮我解答了一下，然后我就请求大佬远程借助帮忙在Windows10上整了好久……好了！ 最后我把软件用Ubuntu20.04打开，能用！真棒！
@@ -36,10 +38,25 @@
 3. 能自己干的事情就不要让别人代劳了……自己写出来的东西，用得放心
 
 ## java项目环境配置
+>小结：openjdk14 + Ubuntu20.04 LTS + VScode remote-ssh
+
 * 我首先在 windows 下用 VScode 加上 jdk14，结果加环境变量后，javac 没反应……可能要重启 [参考文章](http://blog.hotsun168.com/index.php/archives/10/)
-* 于是我用 Vscode 的 remote-ssh 连接了丹姬（局域网内ubuntu服务器），然后就能行了![效果图](./img/java-ubuntu-vscode-remote-ssh-test.png)
+* 于是我用 Vscode 的 remote-ssh 连接了丹姬（局域网内ubuntu服务器），然后就能行了![效果图](./img/java-ubuntu-vscode-remote-ssh-test.png)  
+* 多版本java切换 `sudo update-alternatives --config java`  
+    openjdk14安装 `sudo apt install openjdk-14-jdk-headless -y`  
+    忘记名字用 `apt search openjdk-14` 查名字233
+* 还要调环境变量 `sudo vim /etc/profile`  ,在后面加  
+`JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64/
+PATH=$JAVA_HOME/bin:$PATH
+CLASSPATH=$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/toos.jar
+export PATH JAVA_HOME CLASSPATH`
+    然后保存配置 `source /etc/profile` 
+    > 注意，这条指令只能让环境变量在该终端生效。最好`reboot`或者关闭ssh和vscode重新连, 让它全局生效 
+    * [export的作用](https://www.runoob.com/linux/linux-comm-export.html) 设置本次登录[环境变量](https://www.cnblogs.com/ifreeky/articles/8424296.html)
+
 > 还是linux下开发东西方便，windows都是些什么鬼……  
 完全不用搞懂怎么来，只知道用……
+
 
 ## 本项目结构
 /README.md 一个文档介绍完所有的东西  
